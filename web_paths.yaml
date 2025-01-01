@@ -1,0 +1,5 @@
+web_paths:
+  - "https://lilianweng.github.io/posts/2023-06-23-agent/"
+  - "https://www.philschmid.de/fine-tune-flan-t5-peft"
+  - "https://docs.agentops.ai/v1/integrations/langchain"
+  - "https://api.python.langchain.com/en/latest/chat_models/langchain_community.chat_models.openai.ChatOpenAI.html"
