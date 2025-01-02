@@ -5,4 +5,5 @@ pypdf
 sentence-transformers
 beautifulsoup4
 from_root
+langchain-huggingface
 -e .
