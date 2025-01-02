@@ -30,10 +30,10 @@ class Retriever:
             # Retrieve the documents corresponding to the closest embeddings
             retrieved_docs = [texts[i] for i in indices[0]]
 
-            return retrieved_docs
+            return query, retrieved_docs
         except Exception as e:
             logging.info("Exception occured in Retriever part")
             raise customexception(e, sys)
         
 retriever = Retriever()
-retrieved_docs = retriever.retrieve_context("what is task decomposition ?")
+retrieved_docs = retriever.retrieve_context("Explain me the attention mechanism in easy methods")

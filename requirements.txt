@@ -6,4 +6,6 @@ sentence-transformers
 beautifulsoup4
 from_root
 langchain-huggingface
+langchain-core
+langchain-groq
 -e .
