@@ -6,6 +6,7 @@ from langchain_community.embeddings import HuggingFaceBgeEmbeddings, OllamaEmbed
 import numpy as np
 from src.components.document_loader import DocumentLoader
 from src.components.text_splitter import TextSplitter
+import json
 
 
 class Embedding:
@@ -27,6 +28,10 @@ class VectorStore:
         logging.info("Vector store has been started")
         try:
             texts = [doc.page_content for doc in splits]
+            
+            # Save texts
+            with open("texts.json", "w") as f:
+                json.dump(texts, f)
             
             # for Ollama embeddings use this line of code
             # embeddings = np.array(self.embedding.ollama_embeddings.embed_documents(texts))
@@ -52,10 +57,10 @@ class VectorStore:
             raise customexception(e, sys)
         
         
-document_loader = DocumentLoader()
-documents = document_loader.initiate_document_loader()
-text_splitter = TextSplitter()
-splits = text_splitter.initiate_text_splitter(documents)
-vector_store = VectorStore()
-vector_store.initiate_vector_store(splits)
+# document_loader = DocumentLoader()
+# documents = document_loader.initiate_document_loader()
+# text_splitter = TextSplitter()
+# splits = text_splitter.initiate_text_splitter(documents)
+# vector_store = VectorStore()
+# vector_store.initiate_vector_store(splits)
     
