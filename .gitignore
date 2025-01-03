@@ -170,3 +170,4 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 qa_rag_env/
+hf_embedding_model.pkl

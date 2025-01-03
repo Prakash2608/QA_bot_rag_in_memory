@@ -62,7 +62,7 @@ class Chain:
 
         
 retriever = Retriever()
-query, retrieved_docs = retriever.retrieve_context("Tell me about IPL new conditions")
+query, retrieved_docs = retriever.retrieve_context("Can you explain me query vector, key vector and value vector in attention mechanism like a I am 5 year old boy.")
 chain = Chain()
 answer = chain.initiate_chain(query, retrieved_docs)
 print(answer)

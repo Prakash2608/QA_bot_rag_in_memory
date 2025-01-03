@@ -7,6 +7,7 @@ import numpy as np
 from src.components.document_loader import DocumentLoader
 from src.components.text_splitter import TextSplitter
 import json
+import joblib
 
 
 class Embedding:
@@ -19,7 +20,10 @@ class Embedding:
     
     ollama_embeddings = OllamaEmbeddings(model="llama3.1")
     
+    # To save the model
+    joblib.dump(hf_embeddings, 'hf_embedding_model.pkl')
     
+
 class VectorStore:
     def __init__(self):
         self.embedding= Embedding()

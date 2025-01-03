@@ -3,18 +3,22 @@ from src.exceptions.exception import customexception
 import sys
 import faiss
 import numpy as np
-from src.components.vectorstore import Embedding
+# from src.components.vectorstore import Embedding
 import json
+import joblib
 
 
 class Retriever:
     def __init__(self):
-        self.embeddings = Embedding()
+        # self.embeddings = Embedding()
+        pass
     
     def retrieve_context(self, query):
         try:
             logging.info("Retrieving context")
-            query_vector = self.embeddings.hf_embeddings.embed_documents([query])[0]
+            # To load the model
+            embedding_model = joblib.load('hf_embedding_model.pkl')
+            query_vector = embedding_model.embed_documents([query])[0]
             
             # Load the index from the saved file
             loaded_index = faiss.read_index("./hnsw_index.faiss")
